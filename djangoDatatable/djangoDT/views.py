@@ -10,7 +10,6 @@ def homepage(request):
     return render(request, "djangoDT/homepage.html")
 
 def viewCustomer(request):
-    print 'yes'
     customers = Customer.objects.all()
     customerjson = serializers.serialize('json', customers)
     return HttpResponse(customerjson, content_type='application/json')
